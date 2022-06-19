@@ -63,7 +63,7 @@ body {
 li {
     padding-left: 20px;
     font-size: 18px;
-    display: inline;
+    /* display: inline; */
     text-align: left;
     /* text-transform: uppercase; */
     padding-right: 10px;

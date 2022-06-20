@@ -1,9 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { BsPlayBtn, BsInstagram } from "react-icons/bs";
 import { RiFacebookFill } from "react-icons/ri";
+import http from '../utils/http';
 const NavOne = () => {
+	const [categories, setCategories] = useState([]);
+	useEffect(() => {
+
+		const fetchData = async () => {
+			try {
+				const { data } = await http.get({
+					url: `http://127.0.0.1:8000/api/categories`
+				});
+				setCategories(data.data);
+			} catch (err) {
+				console.log(err);
+			}
+		};
+		fetchData();
+	}, []);
+
+	const categoriesRecursive = (data = []) => {
+		return (
+			data.length &&
+			data.map((item, index) => {
+				return (
+					<li className='nav-item nav01' key={index} >
+						<Link href={`/${item.slug}`}>
+							<a className='nav-link'>{item.name}</a>
+						</Link>
+					</li>
+				);
+			})
+		);
+	};
 	return (
 		<>
 			<header id='header'>
@@ -87,9 +118,10 @@ const NavOne = () => {
 													<a className='nav-link'>Home</a>
 												</Link>
 											</li>
-											<Dropdown className='nav-item nav01'>
+											{categories && categoriesRecursive(categories)}
+											{/* <Dropdown className='nav-item nav01'>
 												<Dropdown.Toggle variant="success" id="dropdown-basic" className='nav-link'>
-													MAGAZINE
+													Thế giới
 												</Dropdown.Toggle>
 
 												<Dropdown.Menu>
@@ -100,7 +132,7 @@ const NavOne = () => {
 											</Dropdown>
 											<Dropdown className='nav-item nav01'>
 												<Dropdown.Toggle variant="success" id="dropdown-basic" className='nav-link'>
-													Business
+													Kinh te
 												</Dropdown.Toggle>
 
 												<Dropdown.Menu>
@@ -111,7 +143,7 @@ const NavOne = () => {
 											</Dropdown>
 											<Dropdown className='nav-item nav01'>
 												<Dropdown.Toggle variant="success" id="dropdown-basic" className='nav-link'>
-													Sports
+													Xa hoi
 												</Dropdown.Toggle>
 
 												<Dropdown.Menu>
@@ -120,21 +152,18 @@ const NavOne = () => {
 													<Dropdown.Item href="/sports">Something else</Dropdown.Item>
 												</Dropdown.Menu>
 											</Dropdown>
-											<li className='nav-item nav01'>
-												<Link href='/art'>
-													<a className='nav-link'>Art</a>
-												</Link>
-											</li>
+
 											<li className='nav-item nav01'>
 												<Link href='/politics'>
-													<a className='nav-link'>POLITICS</a>
+													<a className='nav-link'>Van hoa</a>
 												</Link>
 											</li>
 											<li className='nav-item nav01'>
 												<Link href='/travel'>
-													<a className='nav-link'>Travel</a>
+													<a className='nav-link'>The thao</a>
 												</Link>
 											</li>
+										 */}
 											<li className='nav-item nav01'>
 												<Link href='/contactus'>
 													<a className='nav-link'>Contact</a>

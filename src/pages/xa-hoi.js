@@ -3,17 +3,17 @@ import Footer from '../components/Footer';
 import Layout from '../components/Layout';
 import NavOne from '../components/Navone';
 import Banner from '../components/banner';
-import Politics from '../components/Politics';
+import Sports from '../components/Sports';
 
-const PoliticsNews = () => {
+const XaHoi = () => {
 	return (
 		<Layout>
 			<NavOne />
 			<Banner />
-			<Politics />
+			<Sports />
 			<Footer />
 		</Layout>
 	);
 };
 
-export default PoliticsNews;
+export default XaHoi;

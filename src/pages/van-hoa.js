@@ -3,17 +3,17 @@ import Footer from '../components/Footer';
 import Layout from '../components/Layout';
 import NavOne from '../components/Navone';
 import Banner from '../components/banner';
-import Business from '../components/Business';
+import Politics from '../components/Politics';
 
-const Businessnews = () => {
+const VanHoa = () => {
 	return (
 		<Layout>
 			<NavOne />
 			<Banner />
-			<Business />
+			<Politics />
 			<Footer />
 		</Layout>
 	);
 };
 
-export default Businessnews;
+export default VanHoa;

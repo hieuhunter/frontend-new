@@ -5,7 +5,7 @@ import NavOne from '../components/Navone';
 import Magazine from '../components/magazine';
 import Banner from '../components/banner';
 
-const TapChi = () => {
+const TheGioi = () => {
 	return (
 		<Layout>
 			<NavOne />
@@ -16,4 +16,4 @@ const TapChi = () => {
 	);
 };
 
-export default TapChi;
+export default TheGioi;

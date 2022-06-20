@@ -3,17 +3,17 @@ import Footer from '../components/Footer';
 import Layout from '../components/Layout';
 import NavOne from '../components/Navone';
 import Banner from '../components/banner';
-import Sports from '../components/Sports';
+import Travel from '../components/Travel';
 
-const SportsNews = () => {
+const TheThao = () => {
 	return (
 		<Layout>
 			<NavOne />
 			<Banner />
-			<Sports />
+			<Travel />
 			<Footer />
 		</Layout>
 	);
 };
 
-export default SportsNews;
+export default TheThao;

@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image'
 const Travel = () => {
 	return (
 		<>
@@ -17,7 +18,7 @@ const Travel = () => {
 										<div className='row'>
 											<div className='col-sm-4 grid-margin'>
 												<div className='rotate-img'>
-													<img src='../assets/images/travel/Travel_7.png' alt='banner' className='img-fluid' />
+													<Image src='/assets/images/travel/Travel_7.png' width={200} height={200} alt='banner' className='img-fluid' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -34,7 +35,7 @@ const Travel = () => {
 										<div className='row'>
 											<div className='col-sm-4 grid-margin'>
 												<div className='rotate-img'>
-													<img src='../assets/images/travel/Travel_8.png' alt='banner' className='img-fluid' />
+													<Image src='/assets/images/travel/Travel_8.png' width={200} height={200} alt='banner' className='img-fluid' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -51,7 +52,7 @@ const Travel = () => {
 										<div className='row'>
 											<div className='col-sm-4 grid-margin'>
 												<div className='rotate-img'>
-													<img src='../assets/images/travel/Travel_9.png' alt='banner' className='img-fluid' />
+													<Image src='/assets/images/travel/Travel_9.png' width={200} height={200} alt='banner' className='img-fluid' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -68,7 +69,7 @@ const Travel = () => {
 										<div className='row'>
 											<div className='col-sm-4 grid-margin'>
 												<div className='rotate-img'>
-													<img src='../assets/images/travel/Travel_10.png' alt='banner' className='img-fluid' />
+													<Image src='/assets/images/travel/Travel_10.png' width={200} height={200} alt='banner' className='img-fluid' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -85,7 +86,7 @@ const Travel = () => {
 										<div className='row'>
 											<div className='col-sm-4 grid-margin'>
 												<div className='rotate-img'>
-													<img src='../assets/images/travel/Travel_11.png' alt='banner' className='img-fluid' />
+													<Image src='/assets/images/travel/Travel_11.png' width={200} height={200} alt='banner' className='img-fluid' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -102,7 +103,7 @@ const Travel = () => {
 										<div className='row'>
 											<div className='col-sm-4 grid-margin'>
 												<div className='rotate-img'>
-													<img src='../assets/images/travel/Travel_12.png' alt='banner' className='img-fluid' />
+													<Image src='/assets/images/travel/Travel_12.png' width={200} height={200} alt='banner' className='img-fluid' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -131,7 +132,7 @@ const Travel = () => {
 														</div>
 														<div className='col-sm-4'>
 															<div className='rotate-img'>
-																<img src='../assets/images/travel/Travel_1.png' alt='banner' className='img-fluid' />
+																<Image src='/assets/images/travel/Travel_1.png' width={200} height={200} alt='banner' className='img-fluid' />
 															</div>
 														</div>
 													</div>
@@ -150,7 +151,7 @@ const Travel = () => {
 														</div>
 														<div className='col-sm-4'>
 															<div className='rotate-img'>
-																<img src='../assets/images/travel/Travel_2.png' alt='banner' className='img-fluid' />
+																<Image src='/assets/images/travel/Travel_2.png' width={200} height={200} alt='banner' className='img-fluid' />
 															</div>
 														</div>
 													</div>
@@ -169,7 +170,7 @@ const Travel = () => {
 														</div>
 														<div className='col-sm-4'>
 															<div className='rotate-img'>
-																<img src='../assets/images/travel/Travel_3.png' alt='banner' className='img-fluid' />
+																<Image src='/assets/images/travel/Travel_3.png' width={200} height={200} alt='banner' className='img-fluid' />
 															</div>
 														</div>
 													</div>
@@ -180,7 +181,7 @@ const Travel = () => {
 											<h2 className='mb-4 text-primary font-weight-600'>Trending</h2>
 											<div className='mb-4'>
 												<div className='rotate-img'>
-													<img src='../assets/images/travel/Travel_4.png' alt='banner' className='img-fluid' />
+													<Image src='/assets/images/travel/Travel_4.png' width={200} height={200} alt='banner' className='img-fluid' />
 												</div>
 												<h3 className='mt-3 font-weight-600'>Virus Kills Member Of Advising Iran’s Supreme</h3>
 												<p className='fs-13 text-muted mb-0'>
@@ -189,7 +190,7 @@ const Travel = () => {
 											</div>
 											<div className='mb-4'>
 												<div className='rotate-img'>
-													<img src='../assets/images/travel/Travel_5.png' alt='banner' className='img-fluid' />
+													<Image src='/assets/images/travel/Travel_5.png' width={200} height={200} alt='banner' className='img-fluid' />
 												</div>
 												<h3 className='mt-3 font-weight-600'>Virus Kills Member Of Advising Iran’s Supreme</h3>
 												<p className='fs-13 text-muted mb-0'>
@@ -198,7 +199,7 @@ const Travel = () => {
 											</div>
 											<div className='mb-4'>
 												<div className='rotate-img'>
-													<img src='../assets/images/travel/Travel_6.png' alt='banner' className='img-fluid' />
+													<Image src='/assets/images/travel/Travel_6.png' width={200} height={200} alt='banner' className='img-fluid' />
 												</div>
 												<h3 className='mt-3 font-weight-600'>Virus Kills Member Of Advising Iran’s Supreme</h3>
 												<p className='fs-13 text-muted mb-0'>

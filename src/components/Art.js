@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image'
 const Art = () => {
 	return (
 		<>
@@ -16,8 +17,8 @@ const Art = () => {
 									<div className='col-lg-8'>
 										<div className='row'>
 											<div className='col-sm-4 grid-margin'>
-												<div className='rotate-img'>
-													<img src='../assets/images/art/art_7.png' alt='banner' className='img-fluid' />
+												<div className='rotate-Image'>
+													<Image src='/assets/images/art/art_7.png' width={200} height={200} alt='banner' className='Image-fluid' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -33,8 +34,8 @@ const Art = () => {
 										</div>
 										<div className='row'>
 											<div className='col-sm-4 grid-margin'>
-												<div className='rotate-img'>
-													<img src='../assets/images/art/art_8.png' alt='banner' className='img-fluid' />
+												<div className='rotate-Image'>
+													<Image src='/assets/images/art/art_8.png' width={200} height={200} alt='banner' className='Image-fluid' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -50,8 +51,8 @@ const Art = () => {
 										</div>
 										<div className='row'>
 											<div className='col-sm-4 grid-margin'>
-												<div className='rotate-img'>
-													<img src='../assets/images/art/art_9.png' alt='banner' className='img-fluid' />
+												<div className='rotate-Image'>
+													<Image src='/assets/images/art/art_9.png' width={200} height={200} alt='banner' className='Image-fluid' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -67,8 +68,8 @@ const Art = () => {
 										</div>
 										<div className='row'>
 											<div className='col-sm-4 grid-margin'>
-												<div className='rotate-img'>
-													<img src='../assets/images/art/art_10.png' alt='banner' className='img-fluid' />
+												<div className='rotate-Image'>
+													<Image src='/assets/images/art/art_10.png' width={200} height={200} alt='banner' className='Image-fluid' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -84,8 +85,8 @@ const Art = () => {
 										</div>
 										<div className='row'>
 											<div className='col-sm-4 grid-margin'>
-												<div className='rotate-img'>
-													<img src='../assets/images/art/art_11.png' alt='banner' className='img-fluid' />
+												<div className='rotate-Image'>
+													<Image src='/assets/images/art/art_11.png' width={200} height={200} alt='banner' className='Image-fluid' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -101,8 +102,8 @@ const Art = () => {
 										</div>
 										<div className='row'>
 											<div className='col-sm-4 grid-margin'>
-												<div className='rotate-img'>
-													<img src='../assets/images/art/art_12.png' alt='banner' className='img-fluid' />
+												<div className='rotate-Image'>
+													<Image src='/assets/images/art/art_12.png' width={200} height={200} alt='banner' className='Image-fluid' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -130,8 +131,8 @@ const Art = () => {
 															</p>
 														</div>
 														<div className='col-sm-4'>
-															<div className='rotate-img'>
-																<img src='../assets/images/art/art_1.png' alt='banner' className='img-fluid' />
+															<div className='rotate-Image'>
+																<Image src='/assets/images/art/art_1.png' width={200} height={200} alt='banner' className='Image-fluid' />
 															</div>
 														</div>
 													</div>
@@ -149,8 +150,8 @@ const Art = () => {
 															</p>
 														</div>
 														<div className='col-sm-4'>
-															<div className='rotate-img'>
-																<img src='../assets/images/art/art_2.png' alt='banner' className='img-fluid' />
+															<div className='rotate-Image'>
+																<Image src='/assets/images/art/art_2.png' width={200} height={200} alt='banner' className='Image-fluid' />
 															</div>
 														</div>
 													</div>
@@ -168,8 +169,8 @@ const Art = () => {
 															</p>
 														</div>
 														<div className='col-sm-4'>
-															<div className='rotate-img'>
-																<img src='../assets/images/art/art_3.png' alt='banner' className='img-fluid' />
+															<div className='rotate-Image'>
+																<Image src='/assets/images/art/art_3.png' width={200} height={200} alt='banner' className='Image-fluid' />
 															</div>
 														</div>
 													</div>
@@ -179,8 +180,8 @@ const Art = () => {
 										<div className='trending'>
 											<h2 className='mb-4 text-primary font-weight-600'>Trending</h2>
 											<div className='mb-4'>
-												<div className='rotate-img'>
-													<img src='../assets/images/art/art_4.png' alt='banner' className='img-fluid' />
+												<div className='rotate-Image'>
+													<Image src='/assets/images/art/art_4.png' width={200} height={200} alt='banner' className='Image-fluid' />
 												</div>
 												<h3 className='mt-3 font-weight-600'>Virus Kills Member Of Advising Iran’s Supreme</h3>
 												<p className='fs-13 text-muted mb-0'>
@@ -188,8 +189,8 @@ const Art = () => {
 												</p>
 											</div>
 											<div className='mb-4'>
-												<div className='rotate-img'>
-													<img src='../assets/images/art/art_5.png' alt='banner' className='img-fluid' />
+												<div className='rotate-Image'>
+													<Image src='/assets/images/art/art_5.png' width={200} height={200} alt='banner' className='Image-fluid' />
 												</div>
 												<h3 className='mt-3 font-weight-600'>Virus Kills Member Of Advising Iran’s Supreme</h3>
 												<p className='fs-13 text-muted mb-0'>
@@ -197,8 +198,8 @@ const Art = () => {
 												</p>
 											</div>
 											<div className='mb-4'>
-												<div className='rotate-img'>
-													<img src='../assets/images/art/art_6.png' alt='banner' className='img-fluid' />
+												<div className='rotate-Image'>
+													<Image src='/assets/images/art/art_6.png' width={200} height={200} alt='banner' className='Image-fluid' />
 												</div>
 												<h3 className='mt-3 font-weight-600'>Virus Kills Member Of Advising Iran’s Supreme</h3>
 												<p className='fs-13 text-muted mb-0'>

@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image'
 const Contactus = () => {
 	return (
 		<>
@@ -20,7 +21,7 @@ const Contactus = () => {
 											Marche! movement. For many, however, the campaign has become less about backing Macron and instead
 											about voting against Le Pen, the National Front candidate.
 										</p>
-										<img src='../assets/images/about/about.jpg' alt='banner' className='img-fluid mb-5' />
+										<Image src='/assets/images/about/about.jpg' alt='banner' width={200} height={200} className='Image-fluid mb-5' />
 										<p className='font-weight-600 fs-15 text-center'>
 											He has led a remarkable campaign, defying the traditional mainstream parties courtesy of his En
 											Marche! movement. For many, however, the campaign has become less about backing Macron and instead

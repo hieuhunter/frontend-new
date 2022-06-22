@@ -1,4 +1,7 @@
 import React from 'react';
+import Image from 'next/image'
+import CustomLink from './CustomLink';
+
 const Politics = () => {
 	return (
 		<>
@@ -17,7 +20,7 @@ const Politics = () => {
 										<div className='row'>
 											<div className='col-sm-4 grid-margin'>
 												<div className='rotate-img'>
-													<img src='../assets/images/politics/Politics_7.jpg' alt='banner' className='img-fluid' />
+													<Image src='/assets/images/politics/Politics_7.jpg' width={200} height={200} alt='banner' className='img-fluid' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -34,7 +37,7 @@ const Politics = () => {
 										<div className='row'>
 											<div className='col-sm-4 grid-margin'>
 												<div className='rotate-img'>
-													<img src='../assets/images/politics/Politics_8.jpg' alt='banner' className='img-fluid' />
+													<Image src='/assets/images/politics/Politics_8.jpg' width={200} height={200} alt='banner' className='img-fluid' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -51,7 +54,7 @@ const Politics = () => {
 										<div className='row'>
 											<div className='col-sm-4 grid-margin'>
 												<div className='rotate-img'>
-													<img src='../assets/images/politics/Politics_9.jpg' alt='banner' className='img-fluid' />
+													<Image src='/assets/images/politics/Politics_9.jpg' width={200} height={200} alt='banner' className='img-fluid' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -68,7 +71,7 @@ const Politics = () => {
 										<div className='row'>
 											<div className='col-sm-4 grid-margin'>
 												<div className='rotate-img'>
-													<img src='../assets/images/politics/Politics_10.jpg' alt='banner' className='img-fluid' />
+													<Image src='/assets/images/politics/Politics_10.jpg' width={200} height={200} alt='banner' className='img-fluid' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -85,7 +88,7 @@ const Politics = () => {
 										<div className='row'>
 											<div className='col-sm-4 grid-margin'>
 												<div className='rotate-img'>
-													<img src='../assets/images/politics/Politics_11.jpg' alt='banner' className='img-fluid' />
+													<Image src='/assets/images/politics/Politics_11.jpg' width={200} height={200} alt='banner' className='img-fluid' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -102,7 +105,7 @@ const Politics = () => {
 										<div className='row'>
 											<div className='col-sm-4 grid-margin'>
 												<div className='rotate-img'>
-													<img src='../assets/images/politics/Politics_12.jpg' alt='banner' className='img-fluid' />
+													<Image src='/assets/images/politics/Politics_12.jpg' width={200} height={200} alt='banner' className='img-fluid' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -131,8 +134,9 @@ const Politics = () => {
 														</div>
 														<div className='col-sm-4'>
 															<div className='rotate-img'>
-																<img
-																	src='../assets/images/politics/Politics_1.jpg'
+																<Image
+																	width={200} height={200}
+																	src='/assets/images/politics/Politics_1.jpg'
 																	alt='banner'
 																	className='img-fluid'
 																/>
@@ -154,8 +158,9 @@ const Politics = () => {
 														</div>
 														<div className='col-sm-4'>
 															<div className='rotate-img'>
-																<img
-																	src='../assets/images/politics/Politics_2.jpg'
+																<Image
+																	width={200} height={200}
+																	src='/assets/images/politics/Politics_2.jpg'
 																	alt='banner'
 																	className='img-fluid'
 																/>
@@ -177,8 +182,9 @@ const Politics = () => {
 														</div>
 														<div className='col-sm-4'>
 															<div className='rotate-img'>
-																<img
-																	src='../assets/images/politics/Politics_3.jpg'
+																<Image
+																	width={200} height={200}
+																	src='/assets/images/politics/Politics_3.jpg'
 																	alt='banner'
 																	className='img-fluid'
 																/>
@@ -192,7 +198,7 @@ const Politics = () => {
 											<h2 className='mb-4 text-primary font-weight-600'>Trending</h2>
 											<div className='mb-4'>
 												<div className='rotate-img'>
-													<img src='../assets/images/politics/Politics_4.jpg' alt='banner' className='img-fluid' />
+													<Image src='/assets/images/politics/Politics_4.jpg' width={200} height={200} alt='banner' className='img-fluid' />
 												</div>
 												<h3 className='mt-3 font-weight-600'>Virus Kills Member Of Advising Iran’s Supreme</h3>
 												<p className='fs-13 text-muted mb-0'>
@@ -201,7 +207,7 @@ const Politics = () => {
 											</div>
 											<div className='mb-4'>
 												<div className='rotate-img'>
-													<img src='../assets/images/politics/Politics_5.jpg' alt='banner' className='img-fluid' />
+													<Image src='/assets/images/politics/Politics_5.jpg' width={200} height={200} alt='banner' className='img-fluid' />
 												</div>
 												<h3 className='mt-3 font-weight-600'>Virus Kills Member Of Advising Iran’s Supreme</h3>
 												<p className='fs-13 text-muted mb-0'>
@@ -211,7 +217,7 @@ const Politics = () => {
 											<div className='mb-4'>
 												<div className='mb-4'>
 													<div className='rotate-img'>
-														<img src='../assets/images/politics/Politics_6.jpg' alt='banner' className='img-fluid' />
+														<Image src='/assets/images/politics/Politics_6.jpg' width={200} height={200} alt='banner' className='img-fluid' />
 													</div>
 													<h3 className='mt-3 font-weight-600'>Virus Kills Member Of Advising Iran’s Supreme</h3>
 													<p className='fs-13 text-muted mb-0'>
@@ -234,26 +240,26 @@ const Politics = () => {
 						<div className='container'>
 							<div className='row'>
 								<div className='col-sm-5'>
-									<img src='../assets/images/logo.svg' className='footer-logo' alt />
+									<Image src='/assets/images/logo.svg' width={200} height={200} className='footer-logo' alt="" />
 									<h5 className='font-weight-normal mt-4 mb-5'>
 										Newspaper is your news, entertainment, music fashion website. We provide you with the latest
 										breaking news and videos straight from the entertainment industry.
 									</h5>
 									<ul className='social-media mb-3'>
 										<li>
-											<a href='#'>
+											<CustomLink href='#'>
 												<i className='mdi mdi-facebook' />
-											</a>
+											</CustomLink>
 										</li>
 										<li>
-											<a href='#'>
+											<CustomLink href='#'>
 												<i className='mdi mdi-youtube' />
-											</a>
+											</CustomLink>
 										</li>
 										<li>
-											<a href='#'>
+											<CustomLink href='#'>
 												<i className='mdi mdi-twitter' />
-											</a>
+											</CustomLink>
 										</li>
 									</ul>
 								</div>
@@ -264,7 +270,7 @@ const Politics = () => {
 											<div className='footer-border-bottom pb-2'>
 												<div className='row'>
 													<div className='col-3'>
-														<img src='../assets/images/dashboard/home_1.jpg' alt='thumb' className='img-fluid' />
+														<Image src='/assets/images/dashboard/home_1.jpg' width={200} height={200} alt='thumb' className='img-fluid' />
 													</div>
 													<div className='col-9'>
 														<h5 className='font-weight-600'>
@@ -280,7 +286,7 @@ const Politics = () => {
 											<div className='footer-border-bottom pb-2 pt-2'>
 												<div className='row'>
 													<div className='col-3'>
-														<img src='../assets/images/dashboard/home_2.jpg' alt='thumb' className='img-fluid' />
+														<Image src='/assets/images/dashboard/home_2.jpg' width={200} height={200} alt='thumb' className='img-fluid' />
 													</div>
 													<div className='col-9'>
 														<h5 className='font-weight-600'>
@@ -296,7 +302,7 @@ const Politics = () => {
 											<div>
 												<div className='row'>
 													<div className='col-3'>
-														<img src='../assets/images/dashboard/home_3.jpg' alt='thumb' className='img-fluid' />
+														<Image src='/assets/images/dashboard/home_3.jpg' width={200} height={200} alt='thumb' className='img-fluid' />
 													</div>
 													<div className='col-9'>
 														<h5 className='font-weight-600 mb-3'>
@@ -351,17 +357,17 @@ const Politics = () => {
 									<div className='d-sm-flex justify-content-between align-items-center'>
 										<div className='fs-14 font-weight-600'>
 											© 2020 @{' '}
-											<a href='' target='_blank' className='text-white'>
+											<CustomLink href="" target='_blank' className='text-white'>
 												{' '}
 												BootstrapDash
-											</a>
+											</CustomLink>
 											. All rights reserved.
 										</div>
 										<div className='fs-14 font-weight-600'>
 											Handcrafted by{' '}
-											<a href='' target='_blank' className='text-white'>
+											<CustomLink href="" target='_blank' className='text-white'>
 												BootstrapDash
-											</a>
+											</CustomLink>
 										</div>
 									</div>
 								</div>

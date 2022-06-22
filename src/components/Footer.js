@@ -1,4 +1,7 @@
 import React from 'react';
+import Image from 'next/image'
+import CustomLink from './CustomLink';
+
 const Footer = () => {
 	return (
 		<>
@@ -7,26 +10,26 @@ const Footer = () => {
 					<div className='container'>
 						<div className='row'>
 							<div className='col-sm-5'>
-								<img src='assets/images/logo.svg' className='footer-logo' alt />
+								<Image src='/assets/images/logo.svg' width={168} height={19} className='footer-logo' alt="" />
 								<h5 className='font-weight-normal mt-4 mb-5'>
 									Newspaper is your news, entertainment, music fashion website. We provide you with the latest breaking
 									news and videos straight from the entertainment industry.
 								</h5>
 								<ul className='social-media mb-3'>
 									<li>
-										<a href='#'>
+										<CustomLink href='#'>
 											<i className='mdi mdi-facebook' />
-										</a>
+										</CustomLink>
 									</li>
 									<li>
-										<a href='#'>
+										<CustomLink href='#'>
 											<i className='mdi mdi-youtube' />
-										</a>
+										</CustomLink>
 									</li>
 									<li>
-										<a href='#'>
+										<CustomLink href='#'>
 											<i className='mdi mdi-twitter' />
-										</a>
+										</CustomLink>
 									</li>
 								</ul>
 							</div>
@@ -37,7 +40,7 @@ const Footer = () => {
 										<div className='footer-border-bottom pb-2'>
 											<div className='row'>
 												<div className='col-3'>
-													<img src='assets/images/dashboard/home_1.jpg' alt='thumb' className='img-fluid' />
+													<Image src='/assets/images/dashboard/home_1.jpg' width={200} height={200} alt='thumb' className='img-fluid' />
 												</div>
 												<div className='col-9'>
 													<h5 className='font-weight-600'>
@@ -53,7 +56,7 @@ const Footer = () => {
 										<div className='footer-border-bottom pb-2 pt-2'>
 											<div className='row'>
 												<div className='col-3'>
-													<img src='assets/images/dashboard/home_2.jpg' alt='thumb' className='img-fluid' />
+													<Image src='/assets/images/dashboard/home_2.jpg' width={200} height={200} alt='thumb' className='img-fluid' />
 												</div>
 												<div className='col-9'>
 													<h5 className='font-weight-600'>
@@ -69,7 +72,7 @@ const Footer = () => {
 										<div>
 											<div className='row'>
 												<div className='col-3'>
-													<img src='assets/images/dashboard/home_3.jpg' alt='thumb' className='img-fluid' />
+													<Image src='/assets/images/dashboard/home_3.jpg' width={200} height={200} alt='thumb' className='img-fluid' />
 												</div>
 												<div className='col-9'>
 													<h5 className='font-weight-600 mb-3'>
@@ -124,17 +127,17 @@ const Footer = () => {
 								<div className='d-sm-flex justify-content-between align-items-center'>
 									<div className='fs-14 font-weight-600'>
 										© 2020 @{' '}
-										<a href='' target='_blank' className='text-white'>
+										<CustomLink href="" target='_blank' className='text-white'>
 											{' '}
 											BootstrapDash
-										</a>
+										</CustomLink>
 										. All rights reserved.
 									</div>
 									<div className='fs-14 font-weight-600'>
 										Handcrafted by{' '}
-										<a href='' target='_blank' className='text-white'>
+										<CustomLink href="" target='_blank' className='text-white'>
 											BootstrapDash
-										</a>
+										</CustomLink>
 									</div>
 								</div>
 							</div>

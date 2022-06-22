@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
+import CustomLink from './CustomLink';
+
 const Auth = () => {
     const [key, setKey] = useState('home');
     return (
@@ -17,10 +19,10 @@ const Auth = () => {
                         <label htmlFor="dlno">Driving License Number</label> <input className="form-styling" type="text" name="username" placeholder="" />
                         <label htmlFor="password">Password</label> <input className="form-styling" type="text" name="password" placeholder="" />
                         <input type="checkbox" id="checkbox" /> <label htmlFor="checkbox"><span className="ui" />Keep me signed in</label>
-                        <div className="btn-animate"> <a className="btn-signin">Login to your account</a> </div>
+                        <div className="btn-animate"> <CustomLink href="#!" className="btn-signin">Login to your account</CustomLink> </div>
 
                     </form>
-                    <div className="forgot"> <a href="#">Forgot your password?</a> </div>
+                    <div className="forgot"> <CustomLink href="#">Forgot your password?</CustomLink> </div>
                 </Tab>
                 <Tab eventKey="profile" title="Resgiter">
                     <form className="form-signin" action method="post" name="form">
@@ -32,7 +34,7 @@ const Auth = () => {
                         <input className="form-styling" type="text" name="dlno" placeholder="" />
                         <label htmlFor="password">Create password</label>
                         <input className="form-styling" type="text" name="confirmpassword" placeholder="" />
-                        <a ng-click="checked = !checked" className="btn-signup">REGISTER</a>
+                        <CustomLink href="" ng-click="checked = !checked" className="btn-signup">REGISTER</CustomLink>
 
                     </form>
 

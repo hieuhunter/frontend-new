@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
+import CustomLink from './CustomLink';
 import Dropdown from 'react-bootstrap/Dropdown';
+import Image from 'next/image'
 import { BsPlayBtn, BsInstagram } from "react-icons/bs";
 import { RiFacebookFill } from "react-icons/ri";
 import http from '../utils/http';
+
 const NavOne = () => {
 	const [categories, setCategories] = useState([]);
 	useEffect(() => {
@@ -11,7 +13,7 @@ const NavOne = () => {
 		const fetchData = async () => {
 			try {
 				const { data } = await http.get({
-					url: `http://127.0.0.1:8000/api/categories`
+					url: `/categories`
 				});
 				setCategories(data.data);
 			} catch (err) {
@@ -27,9 +29,9 @@ const NavOne = () => {
 			data.map((item, index) => {
 				return (
 					<li className='nav-item nav01' key={index} >
-						<Link href={`/${item.slug}`}>
-							<a className='nav-link'>{item.name}</a>
-						</Link>
+						<CustomLink href={`/${item.slug}`} className='nav-link'>
+							{item.name}
+						</CustomLink>
 					</li>
 				);
 			})
@@ -44,46 +46,46 @@ const NavOne = () => {
 							<div className='d-flex justify-content-between align-items-center'>
 								<ul className='navbar-top-left-menu'>
 									<li className='nav-item nav01'>
-										<a href='pages/index-inner.html' className='nav-link'>
+										<CustomLink href='pages/index-inner.html' className='nav-link'>
 											Advertise
-										</a>
+										</CustomLink>
 									</li>
 									<li className='nav-item nav01'>
-										<a href='pages/aboutus.html' className='nav-link'>
+										<CustomLink href='pages/aboutus.html' className='nav-link'>
 											About
-										</a>
+										</CustomLink>
 									</li>
 									<li className='nav-item nav01'>
-										<a href='#' className='nav-link'>
+										<CustomLink href='#' className='nav-link'>
 											Events
-										</a>
+										</CustomLink>
 									</li>
 									<li className='nav-item nav01'>
-										<a href='#' className='nav-link'>
+										<CustomLink href='#' className='nav-link'>
 											Write for Us
-										</a>
+										</CustomLink>
 									</li>
 									<li className='nav-item nav01'>
-										<a href='#' className='nav-link'>
+										<CustomLink href='#' className='nav-link'>
 											In the Press
-										</a>
+										</CustomLink>
 									</li>
 								</ul>
 								<ul className='navbar-top-right-menu'>
 									<li className='nav-item nav01'>
-										<a href='#' className='nav-link'>
+										<CustomLink href='#' className='nav-link'>
 											<i className='mdi mdi-magnify' />
-										</a>
+										</CustomLink>
 									</li>
 									<li className='nav-item nav01'>
-										<a href='/auth/auth' className='nav-link'>
+										<CustomLink href='/auth/auth' className='nav-link'>
 											Login
-										</a>
+										</CustomLink>
 									</li>
 									<li className='nav-item nav01'>
-										<a href='/auth/auth' className='nav-link'>
+										<CustomLink href='/auth/auth' className='nav-link'>
 											Sign in
-										</a>
+										</CustomLink>
 									</li>
 								</ul>
 							</div>
@@ -91,9 +93,9 @@ const NavOne = () => {
 						<div className='navbar-bottom'>
 							<div className='d-flex justify-content-between align-items-center'>
 								<div>
-									<a className='navbar-brand' href='#'>
-										<img src='assets/images/logo.svg' alt='' />
-									</a>
+									<CustomLink className='navbar-brand' href='#'>
+										<Image src='/assets/images/logo.svg' width={0} height={0} alt="" />
+									</CustomLink>
 								</div>
 								<div>
 									<button
@@ -114,9 +116,9 @@ const NavOne = () => {
 												</button>
 											</li>
 											<li className='nav-item active nav01'>
-												<Link href='/'>
-													<a className='nav-link'>Home</a>
-												</Link>
+												<CustomLink href='/' className='nav-link'>
+													Home
+												</CustomLink>
 											</li>
 											{categories && categoriesRecursive(categories)}
 											{/* <Dropdown className='nav-item nav01'>
@@ -154,39 +156,39 @@ const NavOne = () => {
 											</Dropdown>
 
 											<li className='nav-item nav01'>
-												<Link href='/politics'>
-													<a className='nav-link'>Van hoa</a>
-												</Link>
+												<CustomLink href='/politics'>
+													<CustomLink className='nav-link'>Van hoa</CustomLink>
+												</CustomLink>
 											</li>
 											<li className='nav-item nav01'>
-												<Link href='/travel'>
-													<a className='nav-link'>The thao</a>
-												</Link>
+												<CustomLink href='/travel'>
+													<CustomLink className='nav-link'>The thao</CustomLink>
+												</CustomLink>
 											</li>
 										 */}
 											<li className='nav-item nav01'>
-												<Link href='/contactus'>
-													<a className='nav-link'>Contact</a>
-												</Link>
+												<CustomLink href='/contactus' className='nav-link'>
+													Contact
+												</CustomLink>
 											</li>
 										</ul>
 									</div>
 								</div>
 								<ul className='social-media'>
 									<li>
-										<a href='#'>
+										<CustomLink href='#'>
 											<RiFacebookFill />
-										</a>
+										</CustomLink>
 									</li>
 									<li>
-										<a href='#'>
+										<CustomLink href='#'>
 											<BsInstagram />
-										</a>
+										</CustomLink>
 									</li>
 									<li>
-										<a href='#'>
+										<CustomLink href='#'>
 											<BsPlayBtn />
-										</a>
+										</CustomLink>
 									</li>
 								</ul>
 							</div>

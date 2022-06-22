@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image'
 const Business = () => {
 	return (
 		<>
@@ -16,8 +17,8 @@ const Business = () => {
 									<div className='col-lg-8'>
 										<div className='row'>
 											<div className='col-sm-4 grid-margin'>
-												<div className='rotate-img'>
-													<img src='../assets/images/business/business_7.png' alt='banner' className='img-fluid' />
+												<div className='rotate-Image'>
+													<Image src='/assets/images/business/business_7.png' width={200} height={200} alt='banner' className='Image-fluid' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -33,8 +34,8 @@ const Business = () => {
 										</div>
 										<div className='row'>
 											<div className='col-sm-4 grid-margin'>
-												<div className='rotate-img'>
-													<img src='../assets/images/business/business_8.png' alt='banner' className='img-fluid' />
+												<div className='rotate-Image'>
+													<Image src='/assets/images/business/business_8.png' width={200} height={200} alt='banner' className='Image-fluid' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -50,8 +51,8 @@ const Business = () => {
 										</div>
 										<div className='row'>
 											<div className='col-sm-4 grid-margin'>
-												<div className='rotate-img'>
-													<img src='../assets/images/business/business_9.png' alt='banner' className='img-fluid' />
+												<div className='rotate-Image'>
+													<Image src='/assets/images/business/business_9.png' width={200} height={200} alt='banner' className='Image-fluid' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -67,8 +68,8 @@ const Business = () => {
 										</div>
 										<div className='row'>
 											<div className='col-sm-4 grid-margin'>
-												<div className='rotate-img'>
-													<img src='../assets/images/business/business_10.png' alt='banner' className='img-fluid' />
+												<div className='rotate-Image'>
+													<Image src='/assets/images/business/business_10.png' width={200} height={200} alt='banner' className='Image-fluid' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -84,8 +85,8 @@ const Business = () => {
 										</div>
 										<div className='row'>
 											<div className='col-sm-4 grid-margin'>
-												<div className='rotate-img'>
-													<img src='../assets/images/business/business_11.png' alt='banner' className='img-fluid' />
+												<div className='rotate-Image'>
+													<Image src='/assets/images/business/business_11.png' width={200} height={200} alt='banner' className='Image-fluid' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -101,8 +102,8 @@ const Business = () => {
 										</div>
 										<div className='row'>
 											<div className='col-sm-4 grid-margin'>
-												<div className='rotate-img'>
-													<img src='../assets/images/business/business_12.png' alt='banner' className='img-fluid' />
+												<div className='rotate-Image'>
+													<Image src='/assets/images/business/business_12.png' width={200} height={200} alt='banner' className='Image-fluid' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -130,11 +131,12 @@ const Business = () => {
 															</p>
 														</div>
 														<div className='col-sm-4'>
-															<div className='rotate-img'>
-																<img
-																	src='../assets/images/business/business_1.png'
+															<div className='rotate-Image'>
+																<Image
+																	width={200} height={200}
+																	src='/assets/images/business/business_1.png'
 																	alt='banner'
-																	className='img-fluid'
+																	className='Image-fluid'
 																/>
 															</div>
 														</div>
@@ -153,11 +155,12 @@ const Business = () => {
 															</p>
 														</div>
 														<div className='col-sm-4'>
-															<div className='rotate-img'>
-																<img
-																	src='../assets/images/business/business_2.png'
+															<div className='rotate-Image'>
+																<Image
+																	width={200} height={200}
+																	src='/assets/images/business/business_2.png'
 																	alt='banner'
-																	className='img-fluid'
+																	className='Image-fluid'
 																/>
 															</div>
 														</div>
@@ -176,11 +179,12 @@ const Business = () => {
 															</p>
 														</div>
 														<div className='col-sm-4'>
-															<div className='rotate-img'>
-																<img
-																	src='../assets/images/business/business_3.png'
+															<div className='rotate-Image'>
+																<Image
+																	width={200} height={200}
+																	src='/assets/images/business/business_3.png'
 																	alt='banner'
-																	className='img-fluid'
+																	className='Image-fluid'
 																/>
 															</div>
 														</div>
@@ -191,8 +195,8 @@ const Business = () => {
 										<div className='trending'>
 											<h2 className='mb-4 text-primary font-weight-600'>Trending</h2>
 											<div className='mb-4'>
-												<div className='rotate-img'>
-													<img src='../assets/images/business/business_4.png' alt='banner' className='img-fluid' />
+												<div className='rotate-Image'>
+													<Image src='/assets/images/business/business_4.png' width={200} height={200} alt='banner' className='Image-fluid' />
 												</div>
 												<h3 className='mt-3 font-weight-600'>Virus Kills Member Of Advising Iran’s Supreme</h3>
 												<p className='fs-13 text-muted mb-0'>
@@ -200,8 +204,8 @@ const Business = () => {
 												</p>
 											</div>
 											<div className='mb-4'>
-												<div className='rotate-img'>
-													<img src='../assets/images/business/business_5.png' alt='banner' className='img-fluid' />
+												<div className='rotate-Image'>
+													<Image src='/assets/images/business/business_5.png' width={200} height={200} alt='banner' className='Image-fluid' />
 												</div>
 												<h3 className='mt-3 font-weight-600'>Virus Kills Member Of Advising Iran’s Supreme</h3>
 												<p className='fs-13 text-muted mb-0'>
@@ -209,8 +213,8 @@ const Business = () => {
 												</p>
 											</div>
 											<div className='mb-4'>
-												<div className='rotate-img'>
-													<img src='../assets/images/business/business_6.png' alt='banner' className='img-fluid' />
+												<div className='rotate-Image'>
+													<Image src='/assets/images/business/business_6.png' width={200} height={200} alt='banner' className='Image-fluid' />
 												</div>
 												<h3 className='mt-3 font-weight-600'>Virus Kills Member Of Advising Iran’s Supreme</h3>
 												<p className='fs-13 text-muted mb-0'>

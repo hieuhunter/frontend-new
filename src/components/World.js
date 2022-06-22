@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image'
-const Magazine = () => {
+const World = ({ posts }) => {
+	console.log(posts)
 	return (
 		<>
 			<div className='content-wrapper'>
@@ -15,10 +16,29 @@ const Magazine = () => {
 								</div>
 								<div className='row'>
 									<div className='col-lg-8'>
-										<div className='row'>
+										{posts.data.length &&
+											posts.data.map((post, index) => (
+												<div className='row' key={index}>
+													<div className='col-sm-4 grid-margin'>
+														<div className='rotate-img img-fluid'>
+															<Image src='/assets/images/magazine/Magzine_7.jpg' width={195} height={145} alt='banner' />
+														</div>
+													</div>
+													<div className='col-sm-8 grid-margin'>
+														<h2 className='font-weight-600 mb-2'>{post.title}</h2>
+														<p className='fs-13 text-muted mb-0'>
+															<span className='mr-2'>Photo </span>10 Minutes ago
+														</p>
+														<p className='fs-15'>
+															{post.excerpt}
+														</p>
+													</div>
+												</div>
+											))}
+										{/* 	<div className='row'>
 											<div className='col-sm-4 grid-margin'>
-												<div className='rotate-img'>
-													<Image src='/assets/images/magazine/Magzine_7.jpg' width={200} height={200} alt='banner' className='img-fluid' />
+												<div className='rotate-img img-fluid'>
+													<Image src='/assets/images/magazine/Magzine_8.jpg' width={195} height={145} alt='banner' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -34,25 +54,8 @@ const Magazine = () => {
 										</div>
 										<div className='row'>
 											<div className='col-sm-4 grid-margin'>
-												<div className='rotate-img'>
-													<Image src='/assets/images/magazine/Magzine_8.jpg' width={200} height={200} alt='banner' className='img-fluid' />
-												</div>
-											</div>
-											<div className='col-sm-8 grid-margin'>
-												<h2 className='font-weight-600 mb-2'>No charges over 2017 battle bus cases</h2>
-												<p className='fs-13 text-muted mb-0'>
-													<span className='mr-2'>Photo </span>10 Minutes ago
-												</p>
-												<p className='fs-15'>
-													Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown
-													printer took a galley of type and scrambled it to make a type specimen book.
-												</p>
-											</div>
-										</div>
-										<div className='row'>
-											<div className='col-sm-4 grid-margin'>
-												<div className='rotate-img'>
-													<Image src='/assets/images/magazine/Magzine_9.jpg' width={200} height={200} alt='banner' className='img-fluid' />
+												<div className='rotate-img img-fluid'>
+													<Image src='/assets/images/magazine/Magzine_9.jpg' width={195} height={145} alt='banner' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -68,8 +71,8 @@ const Magazine = () => {
 										</div>
 										<div className='row'>
 											<div className='col-sm-4 grid-margin'>
-												<div className='rotate-img'>
-													<Image src='/assets/images/magazine/Magzine_10.jpg' width={200} height={200} alt='banner' className='img-fluid' />
+												<div className='rotate-img img-fluid'>
+													<Image src='/assets/images/magazine/Magzine_10.jpg' width={195} height={145} alt='banner' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -85,8 +88,8 @@ const Magazine = () => {
 										</div>
 										<div className='row'>
 											<div className='col-sm-4 grid-margin'>
-												<div className='rotate-img'>
-													<Image src='/assets/images/magazine/Magzine_11.jpg' width={200} height={200} alt='banner' className='img-fluid' />
+												<div className='rotate-img img-fluid'>
+													<Image src='/assets/images/magazine/Magzine_11.jpg' width={195} height={145} alt='banner' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -102,8 +105,8 @@ const Magazine = () => {
 										</div>
 										<div className='row'>
 											<div className='col-sm-4 grid-margin'>
-												<div className='rotate-img'>
-													<Image src='/assets/images/magazine/Magzine_12.jpg' width={200} height={200} alt='banner' className='img-fluid' />
+												<div className='rotate-img img-fluid'>
+													<Image src='/assets/images/magazine/Magzine_12.jpg' width={195} height={145} alt='banner' />
 												</div>
 											</div>
 											<div className='col-sm-8 grid-margin'>
@@ -116,7 +119,7 @@ const Magazine = () => {
 													printer took a galley of type and scrambled it to make a type specimen book.
 												</p>
 											</div>
-										</div>
+										</div> */}
 									</div>
 									<div className='col-lg-4'>
 										<h2 className='mb-4 text-primary font-weight-600'>Latest news</h2>
@@ -131,8 +134,8 @@ const Magazine = () => {
 															</p>
 														</div>
 														<div className='col-sm-4'>
-															<div className='rotate-img'>
-																<Image src='/assets/images/magazine/Magzine_1.jpg' width={200} height={200} alt='banner' className='img-fluid' />
+															<div className='rotate-img img-fluid'>
+																<Image src='/assets/images/magazine/Magzine_1.jpg' width={80} height={60} alt='banner' />
 															</div>
 														</div>
 													</div>
@@ -150,8 +153,8 @@ const Magazine = () => {
 															</p>
 														</div>
 														<div className='col-sm-4'>
-															<div className='rotate-img'>
-																<Image src='/assets/images/magazine/Magzine_2.jpg' width={200} height={200} alt='banner' className='img-fluid' />
+															<div className='rotate-img img-fluid'>
+																<Image src='/assets/images/magazine/Magzine_2.jpg' width={80} height={60} alt='banner' />
 															</div>
 														</div>
 													</div>
@@ -169,8 +172,8 @@ const Magazine = () => {
 															</p>
 														</div>
 														<div className='col-sm-4'>
-															<div className='rotate-img'>
-																<Image src='/assets/images/magazine/Magzine_3.jpg' width={200} height={200} alt='banner' className='img-fluid' />
+															<div className='rotate-img img-fluid'>
+																<Image src='/assets/images/magazine/Magzine_3.jpg' width={80} height={60} alt='banner' />
 															</div>
 														</div>
 													</div>
@@ -180,8 +183,8 @@ const Magazine = () => {
 										<div className='trending'>
 											<h2 className='mb-4 text-primary font-weight-600'>Trending</h2>
 											<div className='mb-4'>
-												<div className='rotate-img'>
-													<Image src='/assets/images/magazine/Magzine_4.jpg' alt='banner' width={200} height={200} className='img-fluid' />
+												<div className='rotate-img img-fluid'>
+													<Image src='/assets/images/magazine/Magzine_4.jpg' alt='banner' width={310} height={117} />
 												</div>
 												<h3 className='mt-3 font-weight-600'>Virus Kills Member Of Advising Iran’s Supreme</h3>
 												<p className='fs-13 text-muted mb-0'>
@@ -189,8 +192,8 @@ const Magazine = () => {
 												</p>
 											</div>
 											<div className='mb-4'>
-												<div className='rotate-img'>
-													<Image src='/assets/images/magazine/Magzine_5.jpg' width={200} height={200} alt='banner' className='img-fluid' />
+												<div className='rotate-img img-fluid'>
+													<Image src='/assets/images/magazine/Magzine_5.jpg' width={310} height={117} alt='banner' />
 												</div>
 												<h3 className='mt-3 font-weight-600'>Virus Kills Member Of Advising Iran’s Supreme</h3>
 												<p className='fs-13 text-muted mb-0'>
@@ -198,8 +201,8 @@ const Magazine = () => {
 												</p>
 											</div>
 											<div className='mb-4'>
-												<div className='rotate-img'>
-													<Image src='/assets/images/magazine/Magzine_6.jpg' width={200} height={200} alt='banner' className='img-fluid' />
+												<div className='rotate-img img-fluid'>
+													<Image src='/assets/images/magazine/Magzine_6.jpg' width={310} height={117} alt='banner' />
 												</div>
 												<h3 className='mt-3 font-weight-600'>Virus Kills Member Of Advising Iran’s Supreme</h3>
 												<p className='fs-13 text-muted mb-0'>
@@ -217,4 +220,4 @@ const Magazine = () => {
 		</>
 	);
 };
-export default Magazine;
+export default World;

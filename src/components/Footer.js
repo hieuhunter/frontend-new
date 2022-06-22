@@ -10,7 +10,9 @@ const Footer = () => {
 					<div className='container'>
 						<div className='row'>
 							<div className='col-sm-5'>
-								<Image src='/assets/images/logo.svg' width={168} height={19} className='footer-logo' alt="" />
+								<div className='footer-logo' >
+									<Image src='/assets/images/logo.svg' width={168} height={19} alt="" />
+								</div>
 								<h5 className='font-weight-normal mt-4 mb-5'>
 									Newspaper is your news, entertainment, music fashion website. We provide you with the latest breaking
 									news and videos straight from the entertainment industry.
@@ -39,8 +41,8 @@ const Footer = () => {
 									<div className='col-sm-12'>
 										<div className='footer-border-bottom pb-2'>
 											<div className='row'>
-												<div className='col-3'>
-													<Image src='/assets/images/dashboard/home_1.jpg' width={200} height={200} alt='thumb' className='img-fluid' />
+												<div className='col-3 img-fluid'>
+													<Image src='/assets/images/dashboard/home_1.jpg' width={59} height={45} alt='thumb' />
 												</div>
 												<div className='col-9'>
 													<h5 className='font-weight-600'>
@@ -55,8 +57,8 @@ const Footer = () => {
 									<div className='col-sm-12'>
 										<div className='footer-border-bottom pb-2 pt-2'>
 											<div className='row'>
-												<div className='col-3'>
-													<Image src='/assets/images/dashboard/home_2.jpg' width={200} height={200} alt='thumb' className='img-fluid' />
+												<div className='col-3 img-fluid'>
+													<Image src='/assets/images/dashboard/home_2.jpg' width={59} height={45} alt='thumb' />
 												</div>
 												<div className='col-9'>
 													<h5 className='font-weight-600'>
@@ -71,8 +73,8 @@ const Footer = () => {
 									<div className='col-sm-12'>
 										<div>
 											<div className='row'>
-												<div className='col-3'>
-													<Image src='/assets/images/dashboard/home_3.jpg' width={200} height={200} alt='thumb' className='img-fluid' />
+												<div className='col-3 img-fluid'>
+													<Image src='/assets/images/dashboard/home_3.jpg' width={59} height={45} alt='thumb' />
 												</div>
 												<div className='col-9'>
 													<h5 className='font-weight-600 mb-3'>

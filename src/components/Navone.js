@@ -94,7 +94,7 @@ const NavOne = () => {
 							<div className='d-flex justify-content-between align-items-center'>
 								<div>
 									<CustomLink className='navbar-brand' href='#'>
-										<Image src='/assets/images/logo.svg' width={0} height={0} alt="" />
+										<Image src='/assets/images/logo.svg' width={192} height={20} alt="" />
 									</CustomLink>
 								</div>
 								<div>

@@ -6,21 +6,27 @@ import Layout from '../components/Layout.js';
 import NavOne from '../components/Navone';
 import http from '../utils/http.js';
 
-const HomePage = ({ posts }) => {
+const HomePage = ({ posts, posts01 }) => {
 	return (
 		<Layout>
 			<NavOne />
 			<Banner />
-			<Content posts={posts} />
+			<Content posts={posts} posts01={posts01} />
 			<Footer />
 		</Layout>
 	);
 };
 export async function getServerSideProps({ }) {
 	try {
-		const [resPost1] = await Promise.all([
+		const [resPost1,resPost2] = await Promise.all([
 			http.get({
 				url: `/posts?category=the-gioi`,
+				params: {
+					page_size: 3,
+				}
+			}),
+			http.get({
+				url: `/posts?category=kinh-te`,
 				params: {
 					page_size: 3,
 				}
@@ -29,6 +35,7 @@ export async function getServerSideProps({ }) {
 		return {
 			props: {
 				posts: resPost1.data,
+				posts01: resPost2.data
 			}
 		};
 	} catch (err) {

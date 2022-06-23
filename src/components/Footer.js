@@ -129,7 +129,7 @@ const Footer = () => {
 								<div className='d-sm-flex justify-content-between align-items-center'>
 									<div className='fs-14 font-weight-600'>
 										© 2020 @{' '}
-										<CustomLink href="" target='_blank' className='text-white'>
+										<CustomLink href="#" target='_blank' className='text-white'>
 											{' '}
 											BootstrapDash
 										</CustomLink>
@@ -137,7 +137,7 @@ const Footer = () => {
 									</div>
 									<div className='fs-14 font-weight-600'>
 										Handcrafted by{' '}
-										<CustomLink href="" target='_blank' className='text-white'>
+										<CustomLink href="#" target='_blank' className='text-white'>
 											BootstrapDash
 										</CustomLink>
 									</div>

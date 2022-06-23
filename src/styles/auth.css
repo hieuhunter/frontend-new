@@ -18,7 +18,7 @@ body {
 .frame {
     margin-bottom: 20px;
     margin-top: 20px;
-    height: 600px;
+    height: 695px;
     width: 420px;
     background: url(/assets/images/auth/images.jpg) no-repeat center center;
     background-size: cover;
@@ -70,7 +70,10 @@ body {
     color: #ffffff;
     
 }
-
+.signin-active1 {
+    padding-left: 180px;
+    background-color: aliceblue;
+}
 .signin-active a {
     padding-bottom: 10px;
     color: #ffffff;
@@ -110,7 +113,7 @@ body {
     font-weight: 300;
     padding-left: 37px;
     padding-right: 37px;
-    padding-top: 55px;
+    padding-top: 30px;
     transition: opacity .5s ease, transform .5s ease
 }
 

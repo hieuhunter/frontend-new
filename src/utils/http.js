@@ -35,7 +35,9 @@ const http = {
 			url: url,
 			params: params,
 			headers: {
-				...(token && { apikey: `D02eRUTLbJ2FF2sDuRZStrYugvhLjSRY` })
+				Accept: 'application/json',
+				'Content-Type': 'application/json',
+				Authorization: 'Bearer ' + token || ''
 			}
 		});
 	},
@@ -46,7 +48,9 @@ const http = {
 			url: url,
 			data: data,
 			headers: {
-				...(token && { Authorization: `Bearer ${token}` })
+				Accept: 'application/json',
+				'Content-Type': 'application/json',
+				Authorization: 'Bearer ' + token || ''
 			}
 		});
 	},

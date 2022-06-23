@@ -78,12 +78,12 @@ const NavOne = () => {
 										</CustomLink>
 									</li>
 									<li className='nav-item nav01'>
-										<CustomLink href='/auth/auth' className='nav-link'>
+										<CustomLink href='/login' className='nav-link'>
 											Login
 										</CustomLink>
 									</li>
 									<li className='nav-item nav01'>
-										<CustomLink href='/auth/auth' className='nav-link'>
+										<CustomLink href='/register' className='nav-link'>
 											Sign in
 										</CustomLink>
 									</li>

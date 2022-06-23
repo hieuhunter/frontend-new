@@ -5,6 +5,7 @@ import NavOne from '../components/Navone';
 import Banner from '../components/banner';
 import World from 'components/world';
 import http from 'utils/http';
+import pageNumber from 'utils/pageNumber';
 
 const TheGioi = ({ posts }) => {
 	return (
@@ -21,7 +22,8 @@ export async function getServerSideProps({ query }) {
 		const resPost = await http.get({
 			url: `/posts?category=the-gioi`,
 			params: {
-				page_size: 6
+				page: pageNumber(query.page),
+				limit: 6
 			}
 		});
 		return {

@@ -59,14 +59,16 @@ body {
     transform: translateY(-100px);
     opacity: 0
 }
-li {
+
+.nav-item {
     padding-left: 20px;
     font-size: 18px;
     /* display: inline; */
     text-align: left;
     /* text-transform: uppercase; */
     padding-right: 10px;
-    color: #ffffff
+    color: #ffffff;
+    
 }
 
 .signin-active a {

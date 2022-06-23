@@ -46,12 +46,12 @@ const NavOne = () => {
 							<div className='d-flex justify-content-between align-items-center'>
 								<ul className='navbar-top-left-menu'>
 									<li className='nav-item nav01'>
-										<CustomLink href='pages/index-inner.html' className='nav-link'>
+										<CustomLink href='#' className='nav-link'>
 											Advertise
 										</CustomLink>
 									</li>
 									<li className='nav-item nav01'>
-										<CustomLink href='pages/aboutus.html' className='nav-link'>
+										<CustomLink href='#' className='nav-link'>
 											About
 										</CustomLink>
 									</li>
@@ -93,7 +93,7 @@ const NavOne = () => {
 						<div className='navbar-bottom'>
 							<div className='d-flex justify-content-between align-items-center'>
 								<div>
-									<CustomLink className='navbar-brand' href='#'>
+									<CustomLink className='navbar-brand' href='/'>
 										<Image src='/assets/images/logo.svg' width={192} height={20} alt="" />
 									</CustomLink>
 								</div>

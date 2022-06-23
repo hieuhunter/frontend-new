@@ -1,4 +1,5 @@
 import React from 'react';
+import pageNumber from 'utils/pageNumber.js';
 import Banner from '../components/banner.js';
 import Content from '../components/content.js';
 import Footer from '../components/Footer.js';
@@ -16,19 +17,21 @@ const HomePage = ({ posts, posts01 }) => {
 		</Layout>
 	);
 };
-export async function getServerSideProps({ }) {
+export async function getServerSideProps({ query }) {
 	try {
-		const [resPost1,resPost2] = await Promise.all([
+		const [resPost1, resPost2] = await Promise.all([
 			http.get({
 				url: `/posts?category=the-gioi`,
 				params: {
-					page_size: 3,
+					page: pageNumber(query.page),
+					limit: 4
 				}
 			}),
 			http.get({
 				url: `/posts?category=kinh-te`,
 				params: {
-					page_size: 3,
+					page: pageNumber(query.page),
+					limit: 2
 				}
 			})
 		]);

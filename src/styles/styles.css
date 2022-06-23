@@ -5208,13 +5208,13 @@ input[type="button"].btn-block {
   color: #6c757d;
 }
 
-.pagination {
+/* .pagination {
   display: flex;
   padding-left: 0;
   list-style: none;
   border-radius: 0.25rem;
 }
-
+ */
 .page-link {
   position: relative;
   display: block;
@@ -11055,28 +11055,28 @@ h6,
 
 /* Pagination */
 .pagination {
+  padding-left: 445px;
   padding-bottom: 100px;
   padding-top: 92px;
 }
-
-.pagination .page-item .page-link {
+ .page-item .page-link {
   border-color: #e6e7e8;
-  color: #ababac;
+/*   color: #ababac; */
   font-size: 14px;
   font-weight: 500;
-  padding: 15px 64px;
+/*   padding: 15px 64px; */
 }
 
-.pagination .page-item .active {
+.page-item .active {
   color: #007bff;
 }
 
-.pagination .page-item.active .page-link,
-.pagination .page-item:hover .page-link,
-.pagination .page-item:focus .page-link,
-.pagination .page-item:active .page-link {
+/*  .page-item.active .page-link,
+.page-item:hover .page-link,
+.page-item:focus .page-link,
+.page-item:active .page-link {
   color: #007bff;
-}
+} */
 
 /* Buttons */
 .btn {

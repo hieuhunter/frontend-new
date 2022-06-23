@@ -94,7 +94,7 @@ const Content = ({ posts, posts01 }) => {
 														<span className='mr-2'>Photo </span>10 Minutes ago
 													</div>
 												</div>
-												<div className='rotate-img img-fluid img-lg' href="/">
+												<div className='rotate-img img-fluid img-lg' href="#">
 													<Image src='/assets/images/dashboard/home_1.jpg' width={81} height={61} alt='thumb' />
 												</div>
 											</div>

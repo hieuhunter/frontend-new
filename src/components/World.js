@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image'
+import Pagination from './Pagination';
 const World = ({ posts }) => {
 	console.log(posts)
 	return (
@@ -211,6 +212,7 @@ const World = ({ posts }) => {
 											</div>
 										</div>
 									</div>
+									<Pagination total={posts?.pagination?.total} limit={6} />
 								</div>
 							</div>
 						</div>

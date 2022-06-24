@@ -1,7 +1,7 @@
 import cookie from 'js-cookie';
 
 export const setCookie = (key, value, sessionCookie = false) => {
-	if (process.browser) {
+	if (typeof window !== 'undefined') {
 		const options = {
 			expires: sessionCookie ? 1 / 4000 : 2,
 			domain: process.env.COOKIE_DOMAIN
@@ -12,10 +12,10 @@ export const setCookie = (key, value, sessionCookie = false) => {
 };
 
 export const removeCookie = (key, opt) => {
-	if (process.browser) cookie.remove(key, opt);
+	if (typeof window !== 'undefined') cookie.remove(key, opt);
 };
 
-export const getCookie = (key, req) => (process.browser ? getCookieFromBrowser(key) : getCookieFromServer(key, req));
+export const getCookie = (key, req) => (typeof window !== 'undefined' ? getCookieFromBrowser(key) : getCookieFromServer(key, req));
 
 const getCookieFromBrowser = (key) => cookie.get(key);
 

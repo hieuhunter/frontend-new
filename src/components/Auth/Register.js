@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import { useFormik } from 'formik';
+import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { setCookie } from 'utils/cookies';
-import history from 'utils/history';
 import http from 'utils/http';
 import * as yup from 'yup';
 
@@ -11,7 +11,7 @@ const Register = () => {
 	/* 	const { data } = useSWR(`/auth/signup`, {
 		revalidateOnFocus: false
 	}); */
-
+	const router = useRouter();
 	const formik = useFormik({
 		initialValues: {
 			first_name: '',
@@ -23,32 +23,31 @@ const Register = () => {
 		validationSchema: yup.object({
 			first_name: yup
 				.string()
-				.min(6, 'Tên ít nhất phải có 6 ký tự')
-				.max(16, 'Tên phải có nhiều nhất 16 ký tự')
-				.required('Tên là bắt buộc'),
+				.min(2, 'First Name must have at least 2 characters')
+				.max(16, 'First Name must be more than 16 characters')
+				.required('First Name required'),
 			last_name: yup
 				.string()
-				.min(6, 'Họ ít nhất phải có 6 ký tự')
-				.max(16, 'Họ phải có nhiều nhất 16 ký tự')
-				.required('Họ là bắt buộc')
+				.min(2, 'Last Name must have at least 2 characters')
+				.max(16, 'Last Name must be more than 16 characters')
+				.required('Last Name required')
 				.nullable(),
 			user_name: yup
 				.string()
-				.min(6, 'Tài khoản ít nhất phải có 6 ký tự')
-				.max(66, 'Tài khoản phải có nhiều nhất 16 ký tự')
-				.matches(/^(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/, 'Tai khoan invalid')
-				.required('Tài khoản là bắt buộc')
+				.min(6, 'Username must have at least 6 characters')
+				.max(66, 'Username must be more than 66 characters')
+				.matches(/^(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/, 'Username invalid')
+				.required('Username required')
 				.nullable(),
-			password: yup.string().required('Mật khẩu là bắt buộc').nullable(),
+			password: yup.string().required('Password required').nullable(),
 			email: yup
 				.string()
 				.matches(
 					/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
 					'Email invalid'
 				)
-				.required('Email là bắt buộc')
+				.required('Email required')
 		}),
-
 		onSubmit: (values, { setSubmitting, setErrors }) => {
 			http
 				.post({
@@ -62,20 +61,12 @@ const Register = () => {
 					}
 				})
 				.then((response) => {
-					if (response.data.success) {
-						setCookie('token', response.data.data.token.access_token);
-						history.push('/login');
-					}
+					router.push('/login');
 				})
 				.catch((error) => {
-					console.log(error);
-					setErrors({
-						first_name: error?.response?.data?.error?.message,
-						last_name: error?.response?.data?.error?.message,
-						user_name: error?.response?.data?.error?.message,
-						password: error?.response?.data?.error?.message,
-						email: error?.response?.data?.error?.message
-					});
+					if (error.response?.status === 400) {
+						setErrors(error.response?.data?.errors);
+					}
 				})
 				.finally(() => {
 					setSubmitting(false);
@@ -85,7 +76,7 @@ const Register = () => {
 
 	return (
 		<div className='container-1 frame'>
-			<div id='controlled-tab-example' activeKey={key} onSelect={(k) => setKey(k)} className='mb-3 links'>
+			<div id='controlled-tab-example' activekey={key} onSelect={(k) => setKey(k)} className='mb-3 links'>
 				{/* 
 				<Tab eventKey="home" title="Login" className='signin-active '>
 
@@ -100,7 +91,7 @@ const Register = () => {
 
 					<div className="forgot"> <CustomLink href="#">Forgot your password?</CustomLink> </div>
 				</Tab> */}
-				<h3 className='signin-active signin-active1' eventKey='home'>
+				<h3 className='signin-active signin-active1' eventkey='home'>
 					Register
 				</h3>
 				<div title='Register'>
@@ -159,7 +150,7 @@ const Register = () => {
 						<label htmlFor='password'>Password</label>
 						{/* 	<input className="form-styling" type="text" name="confirmpassword" placeholder="" /> */}
 						<input
-							type='text'
+							type='password'
 							className={classNames('form-styling', {
 								'is-invalid': formik.touched.password && formik.errors.password
 							})}
@@ -188,7 +179,11 @@ const Register = () => {
 							value={formik.values.email}
 						/>
 						{formik.touched.email && formik.errors.email && <div id='invalid-feedback'>{formik.errors.email}</div>}
-						<button className='btn-signup' type='submit' disabled={formik.isSubmitting}>
+						<button
+							className='btn-signup'
+							type='submit'
+							disabled={formik.isSubmitting}
+						>
 							{formik.isSubmitting ? 'Signuping' : 'Register'}
 							{/* REGISTER */}
 						</button>

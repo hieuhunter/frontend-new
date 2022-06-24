@@ -25,7 +25,9 @@
     "react-bootstrap": "^2.4.0",
     "react-dom": "18.1.0",
     "react-icons": "^4.4.0",
+    "react-redux": "^8.0.2",
     "react-router-dom": "^6.3.0",
+    "rxjs-operators": "^1.1.3",
     "swr": "^1.3.0",
     "yup": "^0.32.11"
   },

@@ -1,26 +1,29 @@
 
 import React from 'react';
-import Pagination from 'react-bootstrap/Pagination';
-let active = 2;
-let items = [];
-for (let number = 1; number <= 5; number++) {
-	items.push(
-		<Pagination.Item key={number} active={number === active}>
-			{number}
-		</Pagination.Item>,
-	);
-}
 
 const Test = () => {
 	return (
-		<div>
-			<Pagination>{items}</Pagination>
-			<br />
-
-			<Pagination size="lg">{items}</Pagination>
-			<br />
-
-			<Pagination size="sm">{items}</Pagination>
+		<div className='s132'>
+			<form>
+				<div className="inner-form">
+					{/* <div className="input-field first-wrap">
+						<div className="input-select">
+							<select data-trigger name="choices-single-defaul">
+								<option placeholder>Category</option>
+								<option>Subject A</option>
+								<option>Subject B</option>
+								<option>Subject C</option>
+							</select>
+						</div>
+					</div> */}
+					<div className="input-field second-wrap">
+						<input id="search" type="text" placeholder="Enter Keywords" />
+					</div>
+					<div className="input-field third-wrap">
+						<button className="btn-search" type="button">Search</button>
+					</div>
+				</div>
+			</form>
 		</div>
 	);
 };

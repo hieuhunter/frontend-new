@@ -24,7 +24,7 @@ export async function getServerSideProps({ query }) {
 				url: `/posts?category=the-gioi`,
 				params: {
 					page: pageNumber(query.page),
-					limit: 4
+					limit: 3
 				}
 			}),
 			http.get({

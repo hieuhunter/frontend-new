@@ -1,15 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import CustomLink from './CustomLink';
-import Dropdown from 'react-bootstrap/Dropdown';
-import Image from 'next/image'
-import { BsPlayBtn, BsInstagram } from "react-icons/bs";
-import { RiFacebookFill } from "react-icons/ri";
+import Image from 'next/image';
+import { BsPlayBtn, BsInstagram } from 'react-icons/bs';
+import { RiFacebookFill } from 'react-icons/ri';
 import http from '../utils/http';
+import useUser from 'hooks/useUser';
+import { getCookie, removeCookie } from 'utils/cookies';
+import { useRouter } from 'next/router';
 
 const NavOne = () => {
+	const { user } = useUser();
+	const router = useRouter();
 	const [categories, setCategories] = useState([]);
-	useEffect(() => {
 
+	const onLogoutClick = () => {
+		http.post({
+			url: `/auth/signout`,
+			token: getCookie('token')
+		});
+		removeCookie('token');
+		router.push('/login');
+
+	};
+
+	useEffect(() => {
 		const fetchData = async () => {
 			try {
 				const { data } = await http.get({
@@ -28,7 +42,7 @@ const NavOne = () => {
 			data.length &&
 			data.map((item, index) => {
 				return (
-					<li className='nav-item nav01' key={index} >
+					<li className='nav-item nav01' key={index}>
 						<CustomLink href={`/${item.slug}`} className='nav-link'>
 							{item.name}
 						</CustomLink>
@@ -37,91 +51,110 @@ const NavOne = () => {
 			})
 		);
 	};
+
 	return (
-		<>
-			<header id='header'>
-				<div className='container'>
-					<nav className='navbar navbar-expand-lg navbar-light'>
-						<div className='navbar-top'>
-							<div className='d-flex justify-content-between align-items-center'>
-								<ul className='navbar-top-left-menu'>
-									<li className='nav-item nav01'>
-										<CustomLink href='#' className='nav-link'>
-											Advertise
-										</CustomLink>
-									</li>
-									<li className='nav-item nav01'>
-										<CustomLink href='#' className='nav-link'>
-											About
-										</CustomLink>
-									</li>
-									<li className='nav-item nav01'>
-										<CustomLink href='#' className='nav-link'>
-											Events
-										</CustomLink>
-									</li>
-									<li className='nav-item nav01'>
-										<CustomLink href='#' className='nav-link'>
-											Write for Us
-										</CustomLink>
-									</li>
-									<li className='nav-item nav01'>
-										<CustomLink href='#' className='nav-link'>
-											In the Press
-										</CustomLink>
-									</li>
-								</ul>
-								<ul className='navbar-top-right-menu'>
-									<li className='nav-item nav01'>
-										<CustomLink href='#' className='nav-link'>
-											<i className='mdi mdi-magnify' />
-										</CustomLink>
-									</li>
-									<li className='nav-item nav01'>
-										<CustomLink href='/login' className='nav-link'>
-											Login
-										</CustomLink>
-									</li>
-									<li className='nav-item nav01'>
-										<CustomLink href='/register' className='nav-link'>
-											Sign in
-										</CustomLink>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div className='navbar-bottom'>
-							<div className='d-flex justify-content-between align-items-center'>
-								<div>
-									<CustomLink className='navbar-brand' href='/'>
-										<Image src='/assets/images/logo.svg' width={192} height={20} alt="" />
+		<header id='header'>
+			<div className='container'>
+				<nav className='navbar navbar-expand-lg navbar-light'>
+					<div className='navbar-top'>
+						<div className='d-flex justify-content-between align-items-center'>
+							<ul className='navbar-top-left-menu'>
+								<li className='nav-item nav01'>
+									<CustomLink href='#' className='nav-link'>
+										Advertise
 									</CustomLink>
-								</div>
-								<div>
-									<button
-										className='navbar-toggler'
-										type='button'
-										data-target='#navbarSupportedContent'
-										aria-controls='navbarSupportedContent'
-										aria-expanded='false'
-										aria-label='Toggle navigation'
-									>
-										<span className='navbar-toggler-icon' />
-									</button>
-									<div className='navbar-collapse justify-content-center collapse' id='navbarSupportedContent'>
-										<ul className='navbar-nav d-lg-flex justify-content-between align-items-center'>
-											<li>
-												<button className='navbar-close'>
-													<i className='mdi mdi-close' />
-												</button>
-											</li>
-											<li className='nav-item active nav01'>
-												<CustomLink href='/' className='nav-link'>
-													Home
+								</li>
+								<li className='nav-item nav01'>
+									<CustomLink href='#' className='nav-link'>
+										About
+									</CustomLink>
+								</li>
+								<li className='nav-item nav01'>
+									<CustomLink href='#' className='nav-link'>
+										Events
+									</CustomLink>
+								</li>
+								<li className='nav-item nav01'>
+									<CustomLink href='#' className='nav-link'>
+										Write for Us
+									</CustomLink>
+								</li>
+								<li className='nav-item nav01'>
+									<CustomLink href='#' className='nav-link'>
+										In the Press
+									</CustomLink>
+								</li>
+							</ul>
+							<ul className='navbar-top-right-menu'>
+								<li className='nav-item nav01'>
+									<CustomLink href='#' className='nav-link'>
+										<i className='mdi mdi-magnify' />
+									</CustomLink>
+								</li>
+								{
+									!user ? (
+										<>
+											<li className='nav-item nav01'>
+												<CustomLink href='/login' className='nav-link'>
+													Login
 												</CustomLink>
 											</li>
-											{categories && categoriesRecursive(categories)}
-											{/* <Dropdown className='nav-item nav01'>
+											<li className='nav-item nav01'>
+												<CustomLink href='/register' className='nav-link'>
+													Register
+												</CustomLink>
+											</li>
+										</>
+									) : (
+										<>
+											<li className='nav-item nav01'>
+												<CustomLink href='/' className='nav-link'>
+													{user?.user_name}
+												</CustomLink>
+											</li>
+											<li className='nav-item nav01'>
+												<a href='#' type="button" onClick={onLogoutClick} className='nav-link'>
+													Logout
+												</a>
+											</li>
+										</>
+									)
+								}
+							</ul>
+						</div>
+					</div>
+					<div className='navbar-bottom'>
+						<div className='d-flex justify-content-between align-items-center'>
+							<div>
+								<CustomLink className='navbar-brand' href='/'>
+									<Image src='/assets/images/logo.svg' width={192} height={20} alt='' />
+								</CustomLink>
+							</div>
+							<div>
+								<button
+									className='navbar-toggler'
+									type='button'
+									data-target='#navbarSupportedContent'
+									aria-controls='navbarSupportedContent'
+									aria-expanded='false'
+									aria-label='Toggle navigation'
+								>
+									<span className='navbar-toggler-icon' />
+								</button>
+								<div className='navbar-collapse justify-content-center collapse' id='navbarSupportedContent'>
+									<ul className='navbar-nav d-lg-flex justify-content-between align-items-center'>
+										<li>
+											<button className='navbar-close'>
+												<i className='mdi mdi-close' />
+											</button>
+										</li>
+										<li className='nav-item active nav01'>
+											<CustomLink href='/' className='nav-link'>
+												Home
+											</CustomLink>
+										</li>
+										{categories && categoriesRecursive(categories)}
+										{/* <Dropdown className='nav-item nav01'>
 												<Dropdown.Toggle variant="success" id="dropdown-basic" className='nav-link'>
 													Thế giới
 												</Dropdown.Toggle>
@@ -166,37 +199,36 @@ const NavOne = () => {
 												</CustomLink>
 											</li>
 										 */}
-											<li className='nav-item nav01'>
-												<CustomLink href='/contactus' className='nav-link'>
-													Contact
-												</CustomLink>
-											</li>
-										</ul>
-									</div>
+										<li className='nav-item nav01'>
+											<CustomLink href='/contactus' className='nav-link'>
+												Contact
+											</CustomLink>
+										</li>
+									</ul>
 								</div>
-								<ul className='social-media'>
-									<li>
-										<CustomLink href='#'>
-											<RiFacebookFill />
-										</CustomLink>
-									</li>
-									<li>
-										<CustomLink href='#'>
-											<BsInstagram />
-										</CustomLink>
-									</li>
-									<li>
-										<CustomLink href='#'>
-											<BsPlayBtn />
-										</CustomLink>
-									</li>
-								</ul>
 							</div>
+							<ul className='social-media'>
+								<li>
+									<CustomLink href='#'>
+										<RiFacebookFill />
+									</CustomLink>
+								</li>
+								<li>
+									<CustomLink href='#'>
+										<BsInstagram />
+									</CustomLink>
+								</li>
+								<li>
+									<CustomLink href='#'>
+										<BsPlayBtn />
+									</CustomLink>
+								</li>
+							</ul>
 						</div>
-					</nav>
-				</div>
-			</header>
-		</>
+					</div>
+				</nav>
+			</div>
+		</header>
 	);
 };
 export default NavOne;

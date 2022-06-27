@@ -13,6 +13,8 @@ const NavOne = () => {
 	const router = useRouter();
 	const [categories, setCategories] = useState([]);
 
+	
+
 	const onLogoutClick = () => {
 		http.post({
 			url: `/auth/signout`,

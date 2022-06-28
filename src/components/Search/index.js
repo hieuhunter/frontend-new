@@ -9,7 +9,7 @@ const Search = () => {
 	const q = query?.q || '';
 
 	const { data: listSearch, error } = useSWR(
-		`/search?page=0&limit=10&q=${q}`,
+		`/search?page=0&limit=8&q=${q}`,
 		{
 			revalidateOnFocus: false
 		}
@@ -229,7 +229,7 @@ const Search = () => {
 											</div>
 										</div>
 									</div>
-									<Pagination total={listSearch?.pagination?.total} limit={10} />
+									<Pagination total={listSearch?.pagination?.total} limit={5} />
 								</div>
 							</div>
 						</div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image'
 import Pagination from './Pagination';
+import Othernews from './Othernews';
 const World = ({ posts }) => {
 	console.log(posts)
 	return (
@@ -122,7 +123,8 @@ const World = ({ posts }) => {
 											</div>
 										</div> */}
 									</div>
-									<div className='col-lg-4'>
+									<Othernews />
+									{/* <div className='col-lg-4'>
 										<h2 className='mb-4 text-primary font-weight-600'>Latest news</h2>
 										<div className='row'>
 											<div className='col-sm-12'>
@@ -211,7 +213,7 @@ const World = ({ posts }) => {
 												</p>
 											</div>
 										</div>
-									</div>
+									</div> */}
 									<Pagination total={posts?.pagination?.total} limit={6} />
 								</div>
 							</div>

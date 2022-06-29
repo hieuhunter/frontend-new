@@ -1,6 +1,9 @@
 import React from 'react';
 import Image from 'next/image'
-const Sports = () => {
+import Pagination from './Pagination';
+import Othernews from './Othernews';
+const Society = ({ posts }) => {
+	console.log(posts)
 	return (
 		<>
 			<div className='content-wrapper'>
@@ -15,24 +18,26 @@ const Sports = () => {
 								</div>
 								<div className='row'>
 									<div className='col-lg-8'>
-										<div className='row'>
-											<div className='col-sm-4 grid-margin'>
-												<div className='rotate-img'>
-													<Image src='/assets/images/sports/Sports_7.jpg' width={200} height={200} alt='banner' className='img-fluid' />
+										{posts.data.length &&
+											posts.data.map((post, index) => (
+												<div className='row' key={index}>
+													<div className='col-sm-4 grid-margin'>
+														<div className='rotate-img'>
+															<Image src='/assets/images/sports/Sports_7.jpg' width={200} height={200} alt='banner' className='img-fluid' />
+														</div>
+													</div>
+													<div className='col-sm-8 grid-margin'>
+														<h2 className='font-weight-600 mb-2'>{post.title}</h2>
+														<p className='fs-13 text-muted mb-0'>
+															<span className='mr-2'>Photo </span>10 Minutes ago
+														</p>
+														<p className='fs-15'>
+															{post.excerpt}
+														</p>
+													</div>
 												</div>
-											</div>
-											<div className='col-sm-8 grid-margin'>
-												<h2 className='font-weight-600 mb-2'>No charges over 2017 battle bus cases</h2>
-												<p className='fs-13 text-muted mb-0'>
-													<span className='mr-2'>Photo </span>10 Minutes ago
-												</p>
-												<p className='fs-15'>
-													Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown
-													printer took a galley of type and scrambled it to make a type specimen book.
-												</p>
-											</div>
-										</div>
-										<div className='row'>
+											))}
+										{/* 	<div className='row'>
 											<div className='col-sm-4 grid-margin'>
 												<div className='rotate-img'>
 													<Image src='/assets/images/sports/Sports_8.jpg' width={200} height={200} alt='banner' className='img-fluid' />
@@ -116,9 +121,10 @@ const Sports = () => {
 													printer took a galley of type and scrambled it to make a type specimen book.
 												</p>
 											</div>
-										</div>
+										</div> */}
 									</div>
-									<div className='col-lg-4'>
+									<Othernews />
+									{/* <div className='col-lg-4'>
 										<h2 className='mb-4 text-primary font-weight-600'>Latest news</h2>
 										<div className='row'>
 											<div className='col-sm-12'>
@@ -207,7 +213,8 @@ const Sports = () => {
 												</p>
 											</div>
 										</div>
-									</div>
+									</div> */}
+									<Pagination total={posts?.pagination?.total} limit={8} />
 								</div>
 							</div>
 						</div>
@@ -217,4 +224,4 @@ const Sports = () => {
 		</>
 	);
 };
-export default Sports;
+export default Society;
